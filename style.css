@@ -1,0 +1,30 @@
+.widget {
+    width: 250px;
+    height: 400px;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #74da9a;
+    border: 5px solid #74da9a;
+    border-radius: 20px;
+    justify-content: space-around;
+
+}
+
+.display {
+    width: 230px;
+    height: 50px;
+    background-color: #d8eadf;
+    border: 1px solid #707c75;
+    border-radius: 5px;
+}
+
+button {
+    width: 50px;
+    height: 40px;
+}
+
+.enter {
+    height: 40px;
+    width: 100px;
+}
