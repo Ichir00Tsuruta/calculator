@@ -14,6 +14,8 @@ let ce = document.querySelector(".clear-everything");
 let c = document.querySelector(".clear");
 let sign = document.querySelector(".posneg");
 let decimal =document.querySelector(".decimal");
+const displayBox = document.getElementById("display"); 
+const displayText = document.getElementById("displayText");
 
 //variables for start state 
 let firstNumberEntered = false; 
@@ -38,7 +40,7 @@ function clear () {
         updateDisplay("0"); 
     } else {
         num2 = null; 
-        updateDisplay(`${num1} ${operator}`);
+        updateDisplay(`${num1}${operator}`);
     }
 }
 
@@ -100,16 +102,21 @@ function numberInput (value) {
         num1 = inputsNumber;
         firstNumberEntered = true;
         updateDisplay(num1);
-    } else {
+    } else if (num1) {
         num2 = inputsNumber;
         secondNumberEntered = true; 
-        updateDisplay(`${num1} ${operator} ${num2}`);
+        updateDisplay(`${num1}${operator}${num2}`);
     }
 }
 
+
 //function for updating display 
 function updateDisplay (content) {
-    display.textContent = content;
+    displayText.textContent = content;
+
+    if (displayText.scrollHeight > display.clientHeight) {
+        displayText.textContent = "math hard, start over!!";
+    }
 }
 
 //helper for operator input 
@@ -126,7 +133,7 @@ operators.forEach(button => {
         operatorSelected = true;
         secondNumber = true;
         inputs = [];
-        updateDisplay(`${num1} ${operator}`);
+        updateDisplay(`${num1}${operator}`);
 
 })
 })
@@ -150,7 +157,7 @@ function doMath () {
     equals.addEventListener("click", (e) => {
         result = operate ();
         console.log(result);
-        display.textContent = `${result}`;
+        displayText.textContent = `${result}`;
 
         num1 = result; 
         num2 = null; 
@@ -159,6 +166,7 @@ function doMath () {
         operatorSelected = false;
         secondNumber = false;
         secondNumberEntered = false; 
+        firstNumberEntered = true;
     })
 }
 doMath();
@@ -170,7 +178,7 @@ sign.addEventListener("click", (e) => {
     if (!secondNumber) {
         updateDisplay(`${num1}`);
     } else {
-        updateDisplay (`${num1} ${operator} ${num2}`);
+        updateDisplay (`${num1}${operator}${num2}`);
     }
 })
 
@@ -200,80 +208,7 @@ function addDecimal () {
         firstNumberEntered = true; 
     } else {
         secondNumberEntered = true;
-        updateDisplay (`${num1} ${operator} ${inputString}`);
+        updateDisplay (`${num1}${operator}${inputString}`);
     }
 }
 
-/*
-//function for operator input 
-operators.forEach(button => {
-    button.addEventListener("click", (e) => {
-        if (secondNumberEntered) {
-            return;
-        } 
-        operator = e.target.textContent;
-        inputs = [];
-        updateDisplay(`${num1} ${operator}`);
-        operatorSelected = true;
-    })
-})
-
-function numberInput (value)
-numbers.forEach(button => {
-    button.addEventListener("click", (e) => {
-        const value = e.target.textContent;
-        inputs.push(value);
-        inputsJOined = inputs.join(""); 
-        inputsNumber = Number(inputsJoined); 
-        console.log(inputsNumber); 
-    })
-})
-
-numbers.forEach(button => {
-    button.addEventListener("click", (e) => {
-        const value = e.target.textContent;
-        inputs.push(value);
-        console.log(inputs);
-        inputsJoined = inputs.join("");
-        inputsNumber = Number(inputsJoined);
-        console.log(inputsNumber);
-
-        if (!secondNumber) {
-            num1 = inputsNumber;
-            console.log(num1); 
-            display.textContent = `${num1}`;
-        } else {
-            num2 = inputsNumber;
-            console.log(num2);
-            secondNumberEntered = true; 
-            display.textContent = `${num1} ${operator} ${num2}`;
-        }
-    })
-})
-
-operators.forEach(button => {
-    button.addEventListener("click", (e) => {
-        operator = e.target.textContent;
-        console.log(operator);
-        
-        secondNumber = true;
-        inputs = [];
-        display.textContent = `${num1} ${operator}`
-    })
-}) 
-
-operators.forEach(button => {
-    button.addEventListener("click", (e) => {
-        if (secondNumberEntered) {
-            return;
-        } 
-        operator = e.target.textContent;
-        console.log(operator);
-        secondNumber = true;
-        inputs = [];
-        display.textContent = `${num1} ${operator}`; 
-        operatorSelected = true;  
-
-    })
-})
-*/
