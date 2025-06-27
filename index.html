@@ -5,42 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
     <link rel= "stylesheet" href= "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div>
         <div class = "widget">
-           <div class = "first">
-            <div class = "display">0</div>
+            <div class = "top">
+                <div class = "first">
+                    <div class = "display" id = "display">
+                        <span id = "displayText">0</span>
+                    </div>
+                </div>
            </div>
-           <div class = "second">
-            <button class = "clear-everything">CE</button>
-            <button class = "clear">C</button>
-            <button class = "posneg non-number">+/-</button> 
-            <button class = "divide operator non-number">÷</button>
+           <div class = "bottom">
+            <div class = "second">
+                <button class = "clear-everything">CE</button>
+                <button class = "clear">C</button>
+                <button class = "posneg non-number">+/-</button> 
+                <button class = "divide operator non-number">÷</button>
+               </div>
+               <div class = "third">
+                <button class = "seven number">7</button>
+                <button class = "eight number">8</button>
+                <button class = "nine number">9</button>
+                <button class = "multiply operator non-number">x</button>
+               </div>
+               <div class = "fourth">
+                <button class = "four number">4</button>
+                <button class = "five number">5</button>
+                <button class = "six number">6</button>
+                <button class = "subtract operator non-number">-</button>
+               </div>
+               <div class = "fifth">
+                <button class = "one number">1</button>
+                <button class = "two number">2</button>
+                <button class = "three number">3</button>
+                <button class = "add operator non-number">+</button>
+               </div>
+               <div class = "sixth">
+                <button class = "zero number">0</button>
+                <button class = "decimal non-number">.</button>
+                <button class = "enter non-number">=</button>
+               </div> 
            </div>
-           <div class = "third">
-            <button class = "seven number">7</button>
-            <button class = "eight number">8</button>
-            <button class = "nine number">9</button>
-            <button class = "multiply operator non-number">x</button>
-           </div>
-           <div class = "fourth">
-            <button class = "four number">4</button>
-            <button class = "five number">5</button>
-            <button class = "six number">6</button>
-            <button class = "subtract operator non-number">-</button>
-           </div>
-           <div class = "fifth">
-            <button class = "one number">1</button>
-            <button class = "two number">2</button>
-            <button class = "three number">3</button>
-            <button class = "add operator non-number">+</button>
-           </div>
-           <div class = "sixth">
-            <button class = "zero number">0</button>
-            <button class = "decimal non-number">.</button>
-            <button class = "enter non-number">=</button>
-           </div> 
         </div>
     </div>
 </body>
