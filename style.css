@@ -4,8 +4,8 @@
     box-sizing: content-box;
     display: flex;
     flex-direction: column;
-    background-color: #74da9a;
-    border: 5px solid #74da9a;
+    background-color: #3FAB48;
+    border: 5px solid #426B46;
     border-radius: 20px;
     justify-content: space-evenly;
 }
@@ -13,21 +13,23 @@
 .display {
     width: 230px;
     height: 70px;
-    background-color: #d8eadf;
-    border: 1px solid #707c75;
+    background-color: #413338;
+    border: 1px solid #413338;
     border-radius: 5px;
+    color: #33D079;
     font-family: "Silkscreen", sans-serif;
     font-size: 20px;
     text-align: right;
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 #displayText {
     display: inline-block;
     max-width: 100%;
+    padding-right: 5px;;
 }
 
 button {
@@ -53,3 +55,10 @@ button {
     align-items: center;
     height: 250px;
 }
+
+.operator {
+    background-color: #964461;
+    color: #E2E5D3; 
+    border-color: #EB1C65;
+}
+
